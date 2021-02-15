@@ -1,0 +1,152 @@
+nav {
+    padding: 50px;
+    text-align: center;
+  }
+  nav > ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    background: #ddd;
+    border-radius: 5px;
+  }
+  nav > ul > li {
+    float: left;
+    width: 150px;
+    height: 65px;
+    line-height: 65px;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+  }
+  nav > ul > li:hover {
+    background: #d5d5d5;
+    border-radius: 5px;
+  }
+  
+  ul.drop-menu {
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    width: 100%;
+    padding: 0;
+  }
+  ul.drop-menu li {
+    background: #666;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  ul.drop-menu li:hover {
+    background: #606060;
+  }
+  ul.drop-menu li:last-child {
+    border-radius: 0px 0px 5px 5px;
+  }
+  
+  ul.drop-menu li {
+    display: none;
+  }
+  
+  li:hover > ul.drop-menu li {
+    display: block;
+  }
+
+  /*MENU 1*/
+  li:hover > ul.drop-menu.menu-1 li {
+    opacity: 0;
+
+    animation-name: menu1;
+    animation-duration: 300ms;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes menu1 {
+      0% {
+        opacity: 0;
+        transform: rotate(-90deg) translate(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: rotate(0deg) translate(0px);
+      }
+  }
+
+  /*CAROUSEL*/
+  .carousel {
+      position: relative;
+      height: 600px;
+      width: 80%;
+      margin: 0 auto;
+  }
+
+  .carousel-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+  }
+
+  .carousel-track-container {
+      background: lightgreen;
+      height: 100%;
+      position: relative
+  }
+
+  .carousel-track {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      position: relative;
+      height: 100%;
+
+  }
+
+  .carousel-slide {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+  }
+
+  .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+  }
+
+  .carousel-button--left {
+      left: -40px;
+  }
+
+  .carousel-button--right {
+      right: -40px;
+  }
+
+  .carousel-button img {
+      width: 12px;
+  }
+
+  .carousel-nav {
+      background-color: lightsalmon;
+
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+  }
+
+  .carousel-indicator {
+      border: 0;
+      border-radius: 50%;
+      width: 15px;
+      height: 15px;
+      background: rgba(0, 0, 0, 0.3);
+      margin: 0 12px;
+  }
+
+  .carousel-indicator.current-slide {
+      background: rgba(0,0,0,0.75);
+  }
